@@ -170,6 +170,10 @@
 
                         // mark element always as loaded
                         element.data("loaded", true);
+                    }else if(!element.data("loaded")){
+                    	//trigger an event for all other elemnts
+                    	element.trigger("inLoadableArea");
+                    	element.data("loaded", true);
                     }
                 }
             });
